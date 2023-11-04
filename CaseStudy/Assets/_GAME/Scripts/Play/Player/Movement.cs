@@ -9,7 +9,7 @@ namespace _GAME.Scripts.Play.Player
         
         private void FixedUpdate()
         {
-            if (!GameManager.Instance.isGameStarted)
+            if (!GameManager.Instance.isFirstClick)
             {
                 return;
             }

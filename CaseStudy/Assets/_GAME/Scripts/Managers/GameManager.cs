@@ -1,13 +1,14 @@
+
 namespace _GAME.Scripts.Managers
 {
     public class GameManager : MonoSingleton<GameManager>
     {
-        public bool isGameStarted;
+        public bool isFirstClick;
 
         public void StartGame()
         {
-            isGameStarted = true;
-            EventManager.OnGameStart.Invoke();
+            isFirstClick = true;
+            EventManager.OnFirstClick.Invoke();
         }
     }
 }
