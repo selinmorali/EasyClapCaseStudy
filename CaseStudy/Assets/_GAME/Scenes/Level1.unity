@@ -3587,6 +3587,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1016399277}
+  - component: {fileID: 1016399278}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3609,6 +3610,20 @@ Transform:
   m_Father: {fileID: 1970674210}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1016399278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016399276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f267044267846a78c8e4acc75d41305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroy: 0
+  isGameStarted: 0
 --- !u!1 &1032415551
 GameObject:
   m_ObjectHideFlags: 0
@@ -6162,6 +6177,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1616431731}
+  - component: {fileID: 1616431732}
+  - component: {fileID: 1616431733}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -6185,6 +6202,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1616431732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616431730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb097c07812299498915a0a3e793843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ignoreStartedOverGui: 1
+  requiredButtons: -1
+  requiredSelectable: {fileID: 0}
+  onFinger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1016399278}
+        m_TargetAssemblyTypeName: _GAME.Scripts.Managers.GameManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ScreenDepth:
+    Conversion: 1
+    Camera: {fileID: 0}
+    Object: {fileID: 0}
+    Layers:
+      serializedVersion: 2
+      m_Bits: 4294967291
+    Distance: 0
+  onWorld:
+    m_PersistentCalls:
+      m_Calls: []
+  onScreen:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1616431733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616431730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: decf952b629e45f9b739113c0696f19d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 2
 --- !u!1 &1619410470
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,9 +1,13 @@
-using UnityEngine;
-
 namespace _GAME.Scripts.Managers
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : MonoSingleton<GameManager>
     {
         public bool isGameStarted;
+
+        public void StartGame()
+        {
+            isGameStarted = true;
+            EventManager.OnGameStart.Invoke();
+        }
     }
 }
