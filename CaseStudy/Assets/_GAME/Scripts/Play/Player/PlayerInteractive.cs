@@ -1,4 +1,5 @@
 using _GAME.Scripts.Managers;
+using _GAME.Scripts.Play.Collect;
 using UnityEngine;
 
 namespace _GAME.Scripts.Play.Player
@@ -8,11 +9,12 @@ namespace _GAME.Scripts.Play.Player
         private void OnTriggerEnter(Collider other)
         {
             EnterEndGameEntry(other);
+            EnterGate(other);
         }
 
-        private void EnterEndGameEntry(Collider collider)
+        private void EnterEndGameEntry(Collider other)
         {
-            EndGameEntry endGameEntry = collider.GetComponent<EndGameEntry>();
+            EndGameEntry endGameEntry = other.GetComponent<EndGameEntry>();
 
             if (endGameEntry == null)
             {
@@ -20,6 +22,18 @@ namespace _GAME.Scripts.Play.Player
             }
             
             EventManager.OnFinalArea.Invoke();
+        }
+
+        private void EnterGate(Collider other)
+        {
+            Gate gate = other.GetComponent<Gate>();
+
+            if (gate == null)
+            {
+                return;
+            }
+            
+            EventManager.OnGetShotValue.Invoke(gate.gateType, gate.value);
         }
     }
 }

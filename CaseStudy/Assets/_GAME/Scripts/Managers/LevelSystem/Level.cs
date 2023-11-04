@@ -17,11 +17,13 @@ namespace _GAME.Scripts.Managers.LevelSystem
             Idle,
             Runner,
             MiniGame,
-            Final
+            Final,
+            IsFinished
         }
 
         public State state;
         public Stage stage;
+        internal bool IsFinished => state is State.Failed or State.Succeed;
 
         private void Start()
         {

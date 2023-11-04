@@ -8,7 +8,8 @@ namespace _GAME.Scripts.Managers.LevelSystem
     {
         public int levelIndex;
         public int textIndex;
-        public Level level;
+        public Level currentLevel => _currentLevel;
+        private Level _currentLevel;
         
         private void Awake()
         {

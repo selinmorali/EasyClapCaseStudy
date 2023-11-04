@@ -1,12 +1,14 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using Type = _GAME.Scripts.Play.Collect.Type;
 
 namespace _GAME.Scripts.Managers
 {
     public class FloatEvent : UnityEvent<float>{}
     public class BoolEvent : UnityEvent<bool>{}
     public class MoneyEvent : UnityEvent<Vector3, Action, double> { }
+    public class ShotEvent : UnityEvent<Type,float>{}
     
     public static class EventManager
     {
@@ -15,5 +17,7 @@ namespace _GAME.Scripts.Managers
         public static UnityEvent OnOpenButtons = new();
         public static UnityEvent OnFinalArea = new();
         public static UnityEvent OnNextButtonPressed = new();
+        public static UnityEvent OnClickUpgradeWeaponButton = new();
+        public static ShotEvent OnGetShotValue = new ();
     }
 }
