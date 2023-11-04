@@ -1,4 +1,3 @@
-
 namespace _GAME.Scripts.Managers
 {
     public class GameManager : MonoSingleton<GameManager>

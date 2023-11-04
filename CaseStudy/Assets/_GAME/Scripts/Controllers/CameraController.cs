@@ -1,12 +1,15 @@
+using System.Collections;
 using _GAME.Scripts.Managers;
+using Cinemachine;
 using UnityEngine;
 
 namespace _GAME.Scripts.Controllers
 {
     public class CameraController : MonoBehaviour
     {
-        public GameObject RunningCamera;
-        public GameObject FinalCamera;
+        public GameObject runningCamera;
+        public GameObject finalCamera;
+        public Transform player;
 
         private void OnEnable()
         {
@@ -20,8 +23,8 @@ namespace _GAME.Scripts.Controllers
 
         private void OpenFinalCam()
         {
-            FinalCamera.SetActive(true);
-            RunningCamera.SetActive(false);
+            runningCamera.SetActive(false);
+            finalCamera.SetActive(true);
         }
     }
 }

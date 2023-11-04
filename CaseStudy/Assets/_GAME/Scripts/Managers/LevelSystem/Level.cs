@@ -14,6 +14,7 @@ namespace _GAME.Scripts.Managers.LevelSystem
 
         public enum Stage
         {
+            Idle,
             Runner,
             MiniGame,
             Final
@@ -21,6 +22,11 @@ namespace _GAME.Scripts.Managers.LevelSystem
 
         public State state;
         public Stage stage;
+
+        private void Start()
+        {
+            stage = Stage.Idle;
+        }
 
         private void OnEnable()
         {

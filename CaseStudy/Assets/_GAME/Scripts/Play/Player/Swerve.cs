@@ -21,10 +21,10 @@ namespace _GAME.Scripts.Play.Player
                 return;
             }
             
-            MoveXAxisClamp();
+            SwerveXAxis();
         }
 
-        private void MoveXAxisClamp()
+        private void SwerveXAxis()
         {
             _clampPos.x = Mathf.Clamp(transform.position.x, minClampX, maxClampX);
             transform.position = new Vector3(_clampPos.x, 0, transform.position.z);
