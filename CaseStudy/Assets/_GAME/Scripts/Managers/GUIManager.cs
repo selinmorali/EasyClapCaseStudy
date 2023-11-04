@@ -21,6 +21,10 @@ namespace _GAME.Scripts.Managers
                 {
                     CloseTutorialPanel();
                 }
+                else
+                {
+                    CloseButtons();
+                }
             });
             EventManager.OnOpenButtons.AddListener(OpenButtons);
         }
@@ -33,6 +37,10 @@ namespace _GAME.Scripts.Managers
                 if (LevelManager.Instance.levelIndex == 1)
                 {
                     CloseTutorialPanel();
+                }
+                else
+                {
+                    CloseButtons();
                 }
             });
             EventManager.OnOpenButtons.RemoveListener(OpenButtons);
@@ -56,6 +64,11 @@ namespace _GAME.Scripts.Managers
         private void OpenButtons()
         {
             buttons.SetActive(true);
+        }
+
+        private void CloseButtons()
+        {
+            buttons.SetActive(false);
         }
     }
 }
