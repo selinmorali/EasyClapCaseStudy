@@ -34,6 +34,7 @@ namespace _GAME.Scripts.Play.Player
             }
             
             EventManager.OnGetShotValue.Invoke(gate.gateType, gate.value);
+            gate.gameObject.SetActive(false);
         }
     }
 }
