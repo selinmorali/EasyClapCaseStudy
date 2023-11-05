@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace _GAME.Scripts.Managers.LevelSystem
@@ -7,6 +6,7 @@ namespace _GAME.Scripts.Managers.LevelSystem
     {
         public enum State
         {
+            Loading,
             Started,
             Succeed,
             Failed
@@ -28,15 +28,25 @@ namespace _GAME.Scripts.Managers.LevelSystem
         private void Start()
         {
             stage = Stage.Idle;
+            state = State.Loading;
         }
 
         private void OnEnable()
         {
-            EventManager.OnFirstClick.AddListener((() =>
+            EventManager.OnFirstClick.AddListener(() =>
             {
                 state = State.Started;
                 stage = Stage.Runner;
-            }));
+            });
+        }
+
+        private void OnDisable()
+        {
+            EventManager.OnFirstClick.RemoveListener(() =>
+            {
+                state = State.Started;
+                stage = Stage.Runner;
+            });
         }
     }
 }

@@ -28,7 +28,7 @@ namespace _GAME.Scripts.Pool
         {
             for (int i = 0; i < settings.count; i++)
             {
-                var item = Instantiate(settings.currencyPrefab, transform);
+                var item = Instantiate(settings.weaponPrefab, transform);
                 item.Init(transform.position, Quaternion.identity);
                 settings.pools.Add(item);
             }
@@ -37,7 +37,7 @@ namespace _GAME.Scripts.Pool
         private void CreateNewPool()
         {
             settings.pools.Clear();
-            settings.currencyPrefab = settings.prefabs[GetComponent<Weapon>().index];
+            settings.weaponPrefab = settings.prefabs[GetComponent<Weapon>().index];
             SetPool();
             AllUpdateWeapon(ShootController.Instance.power, ShootController.Instance.range);
         }
@@ -75,7 +75,7 @@ namespace _GAME.Scripts.Pool
         {
             for (int i = 0; i < value; i++)
             {
-                var item = Instantiate(settings.currencyPrefab, transform);
+                var item = Instantiate(settings.weaponPrefab, transform);
                 item.Init(transform.position, Quaternion.identity);
                 settings.pools.Add(item);
             }

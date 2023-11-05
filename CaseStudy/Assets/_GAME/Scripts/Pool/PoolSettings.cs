@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using _GAME.Scripts.Play.Shoot;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _GAME.Scripts.Pool
 {
     [Serializable]
     public class PoolSettings
     {
-        [SerializeField] public Weapon currencyPrefab;
+        public Weapon weaponPrefab;
         public List<Weapon> prefabs;
         public List<Weapon> pools = new();
         public int count;

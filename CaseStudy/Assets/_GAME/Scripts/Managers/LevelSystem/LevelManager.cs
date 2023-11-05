@@ -8,9 +8,8 @@ namespace _GAME.Scripts.Managers.LevelSystem
     {
         public int levelIndex;
         public int textIndex;
-        public Level currentLevel => _currentLevel;
-        private Level _currentLevel;
-        
+        public Level currentLevel;
+
         private void Awake()
         {
             if (Instance != this)
@@ -20,6 +19,7 @@ namespace _GAME.Scripts.Managers.LevelSystem
             }
 
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += AssignCurrentLevel;
             StartCoroutine(Loading());
         }
 
@@ -103,6 +103,16 @@ namespace _GAME.Scripts.Managers.LevelSystem
             LoadStarting();
             yield return new WaitForSeconds(0.2f);
             LevelIndexCheck();
+        }
+        
+        private void AssignCurrentLevel(Scene scene, LoadSceneMode mode)
+        {
+            GameObject levelObject = GameObject.FindWithTag("Level"); 
+            if (levelObject == null)
+            {
+                return;
+            }
+            currentLevel = levelObject.GetComponent<Level>();
         }
     }
 }
