@@ -8,6 +8,5 @@ namespace _GAME.Scripts.Controllers
     {
         public List<Weapon> weaponsList = new();
         public int currentWeaponIndex;
-        
     }
 }

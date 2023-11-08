@@ -19,5 +19,6 @@ namespace _GAME.Scripts.Managers
         public static UnityEvent OnNextButtonPressed = new();
         public static UnityEvent OnClickUpgradeWeaponButton = new();
         public static ShotEvent OnGetShotValue = new ();
+        public static FloatEvent OnTotalMoneyUpdate = new();
     }
 }

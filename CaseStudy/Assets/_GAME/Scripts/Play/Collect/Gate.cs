@@ -1,3 +1,4 @@
+using System.Collections;
 using _GAME.Scripts.Play.Shoot;
 using DG.Tweening;
 using TMPro;
@@ -35,7 +36,7 @@ namespace _GAME.Scripts.Play.Collect
         
         private void EnterWeapon(Collider other)
         {
-            var weapon = other.GetComponent<Weapon>();
+            var weapon = other.GetComponentInParent<Weapon>();
             if (weapon == null)
             {
                 return;
@@ -43,7 +44,7 @@ namespace _GAME.Scripts.Play.Collect
             
             UpdateCollectibleValue(weapon.power);
             UpdateScaleTheDoor();
-            weapon.gameObject.SetActive(false);
+            StartCoroutine(CloseWeapon(weapon));
         }
 
         private void UpdateCollectibleValue(int input)
@@ -56,7 +57,15 @@ namespace _GAME.Scripts.Play.Collect
         {
             transform.DOKill();
             transform.localScale = _originalScale; 
-            transform.DOPunchScale(Vector3.one * 0.1f, 1, 1);
+            transform.DOPunchScale(Vector3.one * 0.15f, 1, 1);
+        }
+
+        private IEnumerator CloseWeapon(Weapon weapon)
+        {
+            weapon.effect.Play();
+            yield return new WaitForSeconds(0.1f);
+            weapon.transform.GetChild(0).gameObject.SetActive(false);
+            weapon.gameObject.SetActive(false);
         }
     }
 }

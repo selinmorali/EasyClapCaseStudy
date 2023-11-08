@@ -7,7 +7,12 @@ namespace _GAME.Scripts.Pool
 {
     public class PoolFactory : MonoBehaviour
     {
-        public PoolSettings settings = new();
+        public PoolItem settings = new();
+
+        private void Awake()
+        {
+            settings.weaponPrefab = settings.prefabs.FirstOrDefault();
+        }
 
         private void OnEnable()
         {
@@ -28,7 +33,7 @@ namespace _GAME.Scripts.Pool
         {
             for (int i = 0; i < settings.count; i++)
             {
-                var item = Instantiate(settings.weaponPrefab, transform);
+                var item = Instantiate(settings.prefabs[settings.tier], transform);
                 item.Init(transform.position, Quaternion.identity);
                 settings.pools.Add(item);
             }
@@ -37,9 +42,19 @@ namespace _GAME.Scripts.Pool
         private void CreateNewPool()
         {
             settings.pools.Clear();
-            settings.weaponPrefab = settings.prefabs[GetComponent<Weapon>().index];
+            settings.tier += 1;
+            var currentPrefab = CheckWeapon();
+            if (currentPrefab == null)
+            {
+                return;
+            }
             SetPool();
             AllUpdateWeapon(ShootController.Instance.power, ShootController.Instance.range);
+        }
+
+        private Weapon CheckWeapon()
+        {
+            return settings.tier >= settings.prefabs.Count-1 ? null : settings.prefabs[settings.tier];
         }
 
         public void AllUpdateWeapon(float power, float range)
@@ -73,10 +88,12 @@ namespace _GAME.Scripts.Pool
 
         private void SetPool(int value)
         {
+            Quaternion rotation = Quaternion.Euler(90f, 0f, 0f);
+            
             for (int i = 0; i < value; i++)
             {
                 var item = Instantiate(settings.weaponPrefab, transform);
-                item.Init(transform.position, Quaternion.identity);
+                item.Init(transform.position, rotation);
                 settings.pools.Add(item);
             }
         }
