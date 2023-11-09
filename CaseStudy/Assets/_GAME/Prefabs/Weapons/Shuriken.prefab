@@ -118,7 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce98b1c3a4e04c2c8c7128831aff68dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 0
-  power: 1
-  speed: 2
+  weaponData: {fileID: 11400000, guid: e5f43c9b9d4b04b16a0a0e19b4acf4f9, type: 2}
+  range: 0
+  fireRate: 0
+  power: 0
+  speed: 0
   lifeTime: 1
