@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 32481742695775451}
   - component: {fileID: 7947905302725474548}
   m_Layer: 0
-  m_Name: Armature
+  m_Name: Armature/Anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,9 +108,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db6af7e56dcc44f8b41e5d5f73bcd43b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dontDestroy: 1
   state: 0
   weaponController: {fileID: 0}
   pistolAnimator: {fileID: 6040866252700615064}
+  _fireRateCoef: 10
 --- !u!95 &7947905302725474548
 Animator:
   serializedVersion: 5
@@ -236,6 +238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8346841852846085772}
+  - component: {fileID: 1028666705813803178}
   - component: {fileID: 4142878156419175921}
   - component: {fileID: 644576573067958958}
   - component: {fileID: 5139980070593762071}
@@ -266,6 +269,22 @@ Transform:
   m_Father: {fileID: 4681879533821348220}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1028666705813803178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2208821304132347679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4102641475a4259b8a8c6ba592d5548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPooler: {fileID: 0}
+  firePoint: {fileID: 558243407713840459}
+  pistol: {fileID: 4688620467494661023}
+  barrelOfPistol: {fileID: 2260270554960732373}
 --- !u!114 &4142878156419175921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,6 +553,7 @@ GameObject:
   - component: {fileID: 7476426271381297816}
   - component: {fileID: 6021414496103676241}
   - component: {fileID: 6040866252700615064}
+  - component: {fileID: 8170085539131940331}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -628,6 +648,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8170085539131940331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4688620467494661023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4152a18e95440b29b7e682a638f382c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4885430752139527277
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 558243407713840459}
   m_Layer: 0
-  m_Name: Barrel
+  m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1108,7 +1140,7 @@ Transform:
   - {fileID: 8346841852846085772}
   - {fileID: 8595312442018029800}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6950588876980754851
 MonoBehaviour:

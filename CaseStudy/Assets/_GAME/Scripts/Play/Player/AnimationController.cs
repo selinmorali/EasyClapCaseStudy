@@ -12,17 +12,22 @@ namespace _GAME.Scripts.Play.Player
         PistolShoot
     }
     
-    public class AnimationController : MonoBehaviour
+    public class AnimationController : MonoSingleton<AnimationController>
     {
         public States state;
         public WeaponController weaponController;
         public Animator pistolAnimator;
-        private Animator _animator;
-
+        public float _fireRateCoef;
         
+        private Animator _animator;
+        private Player _player;
+        private float _animationLength;
+        
+
         private void Awake()
         {
             _animator = GetComponent<Animator>();
+            _player = GetComponentInParent<Player>();
         }
 
         private void Update()
@@ -77,7 +82,26 @@ namespace _GAME.Scripts.Play.Player
         private void PistolState()
         {
             state = States.PistolShoot;
+            _animator.SetTrigger("isIdle");
             pistolAnimator.SetTrigger("isPistol");
+        }
+
+        public void CalculateAnimTime()
+        {
+            //her animasyonun süresini fire rate değerine göre kısalt
+            _animationLength = weaponController.weaponDataList[0].fireRate / _fireRateCoef;
+            _animator.SetFloat("kunaiSpeed", _animationLength);
+            
+            _animationLength = weaponController.weaponDataList[1].fireRate / _fireRateCoef;
+            _animator.SetFloat("shurikenSpeed", _animationLength);
+            
+            _animationLength = weaponController.weaponDataList[2].fireRate / _fireRateCoef;
+            pistolAnimator.SetFloat("pistolSpeed", _animationLength);
+        }
+
+        public void Shoot() //Call animation event
+        {
+            _player.Shot();
         }
     }
 }

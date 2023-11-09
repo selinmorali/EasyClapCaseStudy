@@ -17,6 +17,8 @@ namespace _GAME.Scripts.Managers
         public static UnityEvent OnOpenButtons = new();
         public static UnityEvent OnFinalArea = new();
         public static UnityEvent OnNextButtonPressed = new();
+        public static UnityEvent OnWeaponUpgradeButtonPressed = new();
+        //TODO: fiRERATE EVENT firerate arttıkça her bir animasyon için kontrol
         public static UnityEvent OnClickUpgradeWeaponButton = new();
         public static ShotEvent OnGetShotValue = new ();
     }
