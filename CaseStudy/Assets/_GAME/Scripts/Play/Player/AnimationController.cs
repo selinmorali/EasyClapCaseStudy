@@ -1,5 +1,7 @@
-using _GAME.Scripts.Controllers;
+using _GAME.Scripts.Managers;
 using _GAME.Scripts.Managers.LevelSystem;
+using _GAME.Scripts.Play.Shoot;
+using _GAME.Scripts.Pool;
 using UnityEngine;
 
 namespace _GAME.Scripts.Play.Player
@@ -12,22 +14,19 @@ namespace _GAME.Scripts.Play.Player
         PistolShoot
     }
     
-    public class AnimationController : MonoSingleton<AnimationController>
+    public class AnimationController : MonoBehaviour
     {
         public States state;
-        public WeaponController weaponController;
+        public PoolFactory poolFactory;
+        public ShootController shootController;
         public Animator pistolAnimator;
-        public float _fireRateCoef;
-        
         private Animator _animator;
-        private Player _player;
         private float _animationLength;
-        
+
 
         private void Awake()
         {
             _animator = GetComponent<Animator>();
-            _player = GetComponentInParent<Player>();
         }
 
         private void Update()
@@ -38,70 +37,60 @@ namespace _GAME.Scripts.Play.Player
             }
             else
             {
-                IdleState();
+                IdleAnimState();
             }
         }
 
         private void CheckAnimationState()
         {
-            switch (weaponController.currentWeaponIndex)
+            switch (poolFactory.settings.tier)
             {
                 case 0:
-                    KunaiState();
+                    KunaiAnimState();
                     break;
                 case 1:
-                    ShurikenState();
+                    ShurikenAnimState();
                     break;
                 case 2:
-                    PistolState();
+                    //PistolState();
                     break;
                 default:
-                    IdleState();
+                    IdleAnimState();
                     break;
             }
+            
         }
 
-        private void IdleState()
+        private void IdleAnimState()
         {
             state = States.Idle;
             _animator.SetTrigger("isIdle");
         }
     
-        private void ShurikenState()
+        private void ShurikenAnimState()
         {
             state = States.ShurikenShoot;
             _animator.SetTrigger("isShuriken");
+            _animationLength = _animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
         }
         
-        private void KunaiState()
+        private void KunaiAnimState()
         {
             state = States.KunaiShoot;
             _animator.SetTrigger("isKunai");
+            _animationLength = _animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
         }
         
-        private void PistolState()
+        private void PistolAnimState()
         {
             state = States.PistolShoot;
-            _animator.SetTrigger("isIdle");
             pistolAnimator.SetTrigger("isPistol");
         }
 
-        public void CalculateAnimTime()
+        public void Shoot(float animationLength)
         {
-            //her animasyonun süresini fire rate değerine göre kısalt
-            _animationLength = weaponController.weaponDataList[0].fireRate / _fireRateCoef;
-            _animator.SetFloat("kunaiSpeed", _animationLength);
-            
-            _animationLength = weaponController.weaponDataList[1].fireRate / _fireRateCoef;
-            _animator.SetFloat("shurikenSpeed", _animationLength);
-            
-            _animationLength = weaponController.weaponDataList[2].fireRate / _fireRateCoef;
-            pistolAnimator.SetFloat("pistolSpeed", _animationLength);
-        }
-
-        public void Shoot() //Call animation event
-        {
-            _player.Shot();
+            _animationLength = animationLength;
+            shootController.Shot(_animationLength);
         }
     }
 }

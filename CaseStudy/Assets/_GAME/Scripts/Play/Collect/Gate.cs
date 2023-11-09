@@ -42,12 +42,12 @@ namespace _GAME.Scripts.Play.Collect
                 return;
             }
             
-            UpdateCollectibleValue(weapon.weaponData.power);
+            UpdateCollectibleValue(weapon.power);
             UpdateScaleTheDoor();
             StartCoroutine(CloseWeapon(weapon));
         }
 
-        private void UpdateCollectibleValue(float input)
+        private void UpdateCollectibleValue(int input)
         {
             value += input;
             CollectibleValueText.text = value.ToString("+#;-#;0");
