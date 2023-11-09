@@ -64,25 +64,33 @@ namespace _GAME.Scripts.Play.Player
         private void IdleState()
         {
             state = States.Idle;
-            _animator.SetTrigger("isIdle");
+            _animator.SetBool("isIdle", true);
+            _animator.SetBool("isShuriken", false);
+            _animator.SetBool("isKunai", false);
         }
     
         private void ShurikenState()
         {
             state = States.ShurikenShoot;
-            _animator.SetTrigger("isShuriken");
+            _animator.SetBool("isShuriken", true);
+            _animator.SetBool("isIdle", false);
+            _animator.SetBool("isKunai", false);
         }
         
         private void KunaiState()
         {
             state = States.KunaiShoot;
-            _animator.SetTrigger("isKunai");
+            _animator.SetBool("isKunai", true);
+            _animator.SetBool("isIdle", false);
+            _animator.SetBool("isShuriken", false);
         }
         
         private void PistolState()
         {
             state = States.PistolShoot;
-            _animator.SetTrigger("isIdle");
+            _animator.SetBool("isIdle", true);
+            _animator.SetBool("isKunai", false);
+            _animator.SetBool("isShuriken", false);
             pistolAnimator.SetTrigger("isPistol");
         }
 
