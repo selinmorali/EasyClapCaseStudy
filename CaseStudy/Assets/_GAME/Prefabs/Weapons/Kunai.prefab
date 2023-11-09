@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8113385597758830743
+--- !u!1 &3525843555221799744
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6868005606342705508}
-  - component: {fileID: 3849928246842750545}
-  - component: {fileID: 2731593323967888131}
-  - component: {fileID: 1284195242219887114}
-  - component: {fileID: 3128822756844262984}
+  - component: {fileID: 4689348729298035536}
+  - component: {fileID: 7879089651474934467}
+  - component: {fileID: 7041391830185077106}
+  - component: {fileID: 7301396649637314798}
+  - component: {fileID: 5459260502863297707}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Kunai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6868005606342705508
+--- !u!4 &4689348729298035536
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8113385597758830743}
-  m_LocalRotation: {x: 0.70710677, y: -0, z: -0, w: 0.7071068}
+  m_GameObject: {fileID: 3525843555221799744}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 9.600199, y: 9.600199, z: 9.600199}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!33 &3849928246842750545
+  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
+--- !u!33 &7879089651474934467
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8113385597758830743}
-  m_Mesh: {fileID: 4300000, guid: fd95426bba28ccf499f67c106d23cf59, type: 3}
---- !u!23 &2731593323967888131
+  m_GameObject: {fileID: 3525843555221799744}
+  m_Mesh: {fileID: 4300000, guid: 0874e49ca958df4408653928f931e78c, type: 3}
+--- !u!23 &7041391830185077106
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8113385597758830743}
+  m_GameObject: {fileID: 3525843555221799744}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f9788d0310592ad48aecb672d48d3e95, type: 2}
+  - {fileID: 2100000, guid: 9bc501b055c1fa247ba4c5d1f89d1579, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,13 +85,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1284195242219887114
+--- !u!65 &7301396649637314798
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8113385597758830743}
+  m_GameObject: {fileID: 3525843555221799744}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -104,21 +104,21 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0136947725, y: 0.036484968, z: 0.011860021}
-  m_Center: {x: -4.656613e-10, y: -0.000000007450581, z: -0.0000000037252903}
---- !u!114 &3128822756844262984
+  m_Size: {x: 0.056848526, y: 0.6563953, z: 0.14197412}
+  m_Center: {x: 0, y: 0.15577786, z: 0.0000000037252903}
+--- !u!114 &5459260502863297707
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8113385597758830743}
+  m_GameObject: {fileID: 3525843555221799744}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce98b1c3a4e04c2c8c7128831aff68dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 5b695d3ed6a4b44118c183af3b456e35, type: 2}
+  weaponData: {fileID: 11400000, guid: b83ff24c4197841e88924fec9509f513, type: 2}
   range: 0
   fireRate: 0
   power: 0

@@ -27,6 +27,7 @@ namespace _GAME.Scripts.Managers
                 }
             });
             EventManager.OnOpenButtons.AddListener(OpenButtons);
+            
         }
 
         private void OnDisable()
@@ -71,9 +72,9 @@ namespace _GAME.Scripts.Managers
             buttons.SetActive(false);
         }
 
-        public void UpgradeButtonClick()
+        public void ClickUpgradeButton()
         {
-            EventManager.OnClickUpgradeWeaponButton.Invoke();
+            EventManager.OnWeaponUpgradeButtonPressed.Invoke();
         }
     }
 }
