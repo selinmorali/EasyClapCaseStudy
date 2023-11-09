@@ -26,7 +26,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -525, y: 45, z: 89}
   m_LocalScale: {x: 5.782992, y: 5.782992, z: 5.782992}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8875913848833307443}
   - {fileID: 8875913847033081958}
@@ -42,12 +41,11 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 8875913847185848670}
     m_Modifications:
     - target: {fileID: 167394, guid: c13526726c259ba48a081c99b5a47c66, type: 3}
       propertyPath: m_Name
-      value: Cloud
+      value: SM_Env_Cloud_04 (7)
       objectReference: {fileID: 0}
     - target: {fileID: 470856, guid: c13526726c259ba48a081c99b5a47c66, type: 3}
       propertyPath: m_RootOrder
@@ -110,9 +108,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 8bc8c37498dc0fd40a6c73b531e70c59, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c13526726c259ba48a081c99b5a47c66, type: 3}
 --- !u!4 &8875913847033081958 stripped
 Transform:
@@ -124,12 +119,11 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 8875913847185848670}
     m_Modifications:
     - target: {fileID: 167394, guid: c13526726c259ba48a081c99b5a47c66, type: 3}
       propertyPath: m_Name
-      value: Cloud
+      value: SM_Env_Cloud_04 (8)
       objectReference: {fileID: 0}
     - target: {fileID: 470856, guid: c13526726c259ba48a081c99b5a47c66, type: 3}
       propertyPath: m_RootOrder
@@ -192,9 +186,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 8bc8c37498dc0fd40a6c73b531e70c59, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c13526726c259ba48a081c99b5a47c66, type: 3}
 --- !u!4 &8875913847086435954 stripped
 Transform:
@@ -206,7 +197,6 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 8875913847185848670}
     m_Modifications:
     - target: {fileID: 5524303845234471087, guid: 65e59f49c4881f944b09a976c6304912, type: 3}
@@ -215,7 +205,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8bc8c37498dc0fd40a6c73b531e70c59, type: 2}
     - target: {fileID: 6095220879985493107, guid: 65e59f49c4881f944b09a976c6304912, type: 3}
       propertyPath: m_Name
-      value: Cloud
+      value: Cloud (2)
       objectReference: {fileID: 0}
     - target: {fileID: 7119569513477224032, guid: 65e59f49c4881f944b09a976c6304912, type: 3}
       propertyPath: m_RootOrder
@@ -274,9 +264,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65e59f49c4881f944b09a976c6304912, type: 3}
 --- !u!4 &1864594004403602526 stripped
 Transform:
@@ -288,12 +275,11 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 8875913847185848670}
     m_Modifications:
     - target: {fileID: 167394, guid: c13526726c259ba48a081c99b5a47c66, type: 3}
       propertyPath: m_Name
-      value: Cloud
+      value: SM_Env_Cloud_04 (6)
       objectReference: {fileID: 0}
     - target: {fileID: 470856, guid: c13526726c259ba48a081c99b5a47c66, type: 3}
       propertyPath: m_RootOrder
@@ -356,9 +342,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 8bc8c37498dc0fd40a6c73b531e70c59, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c13526726c259ba48a081c99b5a47c66, type: 3}
 --- !u!4 &8875913848833307443 stripped
 Transform:
@@ -370,7 +353,6 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 8875913847185848670}
     m_Modifications:
     - target: {fileID: 5524303845234471087, guid: 65e59f49c4881f944b09a976c6304912, type: 3}
@@ -379,7 +361,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8bc8c37498dc0fd40a6c73b531e70c59, type: 2}
     - target: {fileID: 6095220879985493107, guid: 65e59f49c4881f944b09a976c6304912, type: 3}
       propertyPath: m_Name
-      value: Cloud
+      value: Cloud (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7119569513477224032, guid: 65e59f49c4881f944b09a976c6304912, type: 3}
       propertyPath: m_RootOrder
@@ -438,9 +420,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65e59f49c4881f944b09a976c6304912, type: 3}
 --- !u!4 &1864594004269395731 stripped
 Transform:
@@ -452,12 +431,11 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 8875913847185848670}
     m_Modifications:
     - target: {fileID: 167394, guid: c13526726c259ba48a081c99b5a47c66, type: 3}
       propertyPath: m_Name
-      value: Cloud
+      value: SM_Env_Cloud_04 (9)
       objectReference: {fileID: 0}
     - target: {fileID: 470856, guid: c13526726c259ba48a081c99b5a47c66, type: 3}
       propertyPath: m_RootOrder
@@ -520,9 +498,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 8bc8c37498dc0fd40a6c73b531e70c59, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c13526726c259ba48a081c99b5a47c66, type: 3}
 --- !u!4 &8875913848980477060 stripped
 Transform:

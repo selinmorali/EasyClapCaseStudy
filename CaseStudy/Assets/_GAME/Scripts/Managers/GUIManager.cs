@@ -70,10 +70,5 @@ namespace _GAME.Scripts.Managers
         {
             buttons.SetActive(false);
         }
-
-        public void UpgradeButtonClick()
-        {
-            EventManager.OnClickUpgradeWeaponButton.Invoke();
-        }
     }
 }

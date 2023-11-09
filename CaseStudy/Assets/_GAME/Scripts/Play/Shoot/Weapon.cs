@@ -1,11 +1,13 @@
 using _GAME.Scripts.Managers;
+using _GAME.Scripts.Managers.LevelSystem;
 using UnityEngine;
 
 namespace _GAME.Scripts.Play.Shoot
 {
     public class Weapon : MonoBehaviour
     {
-        public ParticleSystem effect;
+        // public GameObject hitParticleForGate;
+        // public GameObject hitParticleForObstacle;
         public int index;
         public int power;
         public float speed;

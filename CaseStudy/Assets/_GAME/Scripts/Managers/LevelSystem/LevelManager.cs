@@ -20,7 +20,7 @@ namespace _GAME.Scripts.Managers.LevelSystem
 
             DontDestroyOnLoad(gameObject);
             SceneManager.sceneLoaded += AssignCurrentLevel;
-            StartCoroutine(LevelLoading());
+            StartCoroutine(Loading());
         }
 
         private void OnEnable()
@@ -53,7 +53,7 @@ namespace _GAME.Scripts.Managers.LevelSystem
 
             if (levelIndex >= SceneManager.sceneCountInBuildSettings - 1)
             {
-                levelIndex = Random.Range(1, SceneManager.sceneCountInBuildSettings - 1);
+                levelIndex = Random.Range(2, SceneManager.sceneCountInBuildSettings - 1);
                 Set();
             }
             else
@@ -72,8 +72,11 @@ namespace _GAME.Scripts.Managers.LevelSystem
         private void LoadStarting()
         {
             Get();
-            textIndex = 1;
-            Set();
+            if (levelIndex == 0)
+            {
+                IncreaseIndex();
+                Set();
+            }
             SceneManager.LoadScene(levelIndex);
         }
 
@@ -81,13 +84,6 @@ namespace _GAME.Scripts.Managers.LevelSystem
         {
             levelIndex += 1;
             textIndex += 1;
-        }
-
-        private IEnumerator LevelLoading()
-        {
-            LoadStarting();
-            LevelIndexCheck();
-            yield return null;
         }
 
         private void LevelIndexCheck()
@@ -102,6 +98,13 @@ namespace _GAME.Scripts.Managers.LevelSystem
             }
         }
 
+        private IEnumerator Loading()
+        {
+            LoadStarting();
+            yield return new WaitForSeconds(0.2f);
+            LevelIndexCheck();
+        }
+        
         private void AssignCurrentLevel(Scene scene, LoadSceneMode mode)
         {
             GameObject levelObject = GameObject.FindWithTag("Level"); 

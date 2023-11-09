@@ -1,5 +1,4 @@
 using _GAME.Scripts.Managers;
-using _GAME.Scripts.Managers.LevelSystem;
 using _GAME.Scripts.Pool;
 using UnityEngine;
 using Type = _GAME.Scripts.Play.Collect.Type;
@@ -12,6 +11,8 @@ namespace _GAME.Scripts.Play.Shoot
         public float range;
         public float fireRate;
         public float power;
+        public float fireCooldownCoef;
+        
         private PoolFactory _factory;
         private float _timer;
         private float _cooldown;
@@ -47,7 +48,7 @@ namespace _GAME.Scripts.Play.Shoot
                     SetFireRate(value);
                     break;
                 default:
-                    Debug.LogError("Error");
+                    Debug.LogError("Yolunda Gitmeyen şeyler var");
                     break;
             }
         }
@@ -71,10 +72,26 @@ namespace _GAME.Scripts.Play.Shoot
             CheckValues();
             _factory.AllUpdateWeapon(power, range);
         }
-
-        public void Shot(float animationLength)
+        
+        private void Update()
         {
-            _cooldown = animationLength / fireRate;
+            // if (LevelManager.Instance.currentLevel.stage != Level.Stage.Runner
+            //     || LevelManager.Instance.currentLevel.IsFinished)
+            // {
+            //     return;
+            // }
+            
+            if (!GameManager.Instance.isFirstClick)
+            {
+                return;
+            }
+
+            Shot();
+        }
+
+        private void Shot()
+        {
+            _cooldown = fireCooldownCoef / fireRate;
             _timer += Time.deltaTime;
             if (_timer >= _cooldown)
             {

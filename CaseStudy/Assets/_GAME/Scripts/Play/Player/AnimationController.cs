@@ -1,7 +1,5 @@
-using _GAME.Scripts.Managers;
+using _GAME.Scripts.Controllers;
 using _GAME.Scripts.Managers.LevelSystem;
-using _GAME.Scripts.Play.Shoot;
-using _GAME.Scripts.Pool;
 using UnityEngine;
 
 namespace _GAME.Scripts.Play.Player
@@ -17,13 +15,11 @@ namespace _GAME.Scripts.Play.Player
     public class AnimationController : MonoBehaviour
     {
         public States state;
-        public PoolFactory poolFactory;
-        public ShootController shootController;
+        public WeaponController weaponController;
         public Animator pistolAnimator;
         private Animator _animator;
-        private float _animationLength;
 
-
+        
         private void Awake()
         {
             _animator = GetComponent<Animator>();
@@ -37,60 +33,51 @@ namespace _GAME.Scripts.Play.Player
             }
             else
             {
-                IdleAnimState();
+                IdleState();
             }
         }
 
         private void CheckAnimationState()
         {
-            switch (poolFactory.settings.tier)
+            switch (weaponController.currentWeaponIndex)
             {
                 case 0:
-                    KunaiAnimState();
+                    KunaiState();
                     break;
                 case 1:
-                    ShurikenAnimState();
+                    ShurikenState();
                     break;
                 case 2:
-                    //PistolState();
+                    PistolState();
                     break;
                 default:
-                    IdleAnimState();
+                    IdleState();
                     break;
             }
-            
         }
 
-        private void IdleAnimState()
+        private void IdleState()
         {
             state = States.Idle;
             _animator.SetTrigger("isIdle");
         }
     
-        private void ShurikenAnimState()
+        private void ShurikenState()
         {
             state = States.ShurikenShoot;
             _animator.SetTrigger("isShuriken");
-            _animationLength = _animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
         }
         
-        private void KunaiAnimState()
+        private void KunaiState()
         {
             state = States.KunaiShoot;
             _animator.SetTrigger("isKunai");
-            _animationLength = _animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
         }
         
-        private void PistolAnimState()
+        private void PistolState()
         {
             state = States.PistolShoot;
             pistolAnimator.SetTrigger("isPistol");
-        }
-
-        public void Shoot(float animationLength)
-        {
-            _animationLength = animationLength;
-            shootController.Shot(_animationLength);
         }
     }
 }
