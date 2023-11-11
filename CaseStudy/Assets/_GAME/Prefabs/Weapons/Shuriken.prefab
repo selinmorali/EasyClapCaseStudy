@@ -120,7 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: e5f43c9b9d4b04b16a0a0e19b4acf4f9, type: 2}
-  lifeTime: 1
+  lifeTime: 0
+  lifeTimeCoef: 15
 --- !u!54 &7890013597258427126
 Rigidbody:
   m_ObjectHideFlags: 0

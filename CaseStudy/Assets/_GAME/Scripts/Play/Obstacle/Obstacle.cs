@@ -1,6 +1,7 @@
 using _GAME.Scripts.Managers;
 using _GAME.Scripts.Play.Shoot;
 using _GAME.Scripts.Pool;
+using _GAME.Scripts.UI;
 using UnityEngine;
 
 namespace _GAME.Scripts.Play.Obstacle

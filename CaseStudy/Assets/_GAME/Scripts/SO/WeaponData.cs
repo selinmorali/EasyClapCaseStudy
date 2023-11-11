@@ -9,6 +9,13 @@ namespace _GAME.Scripts.SO
         public float range;
         public float fireRate;
         public float power;
-        public float speed;
+        public float lifeTime => CalculateLifeTime();
+        public float lifeTimeCoef;
+        
+        
+        public float CalculateLifeTime()
+        {
+            return range / lifeTimeCoef;
+        }
     }
 }

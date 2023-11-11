@@ -19,7 +19,6 @@ namespace _GAME.Scripts.Managers
         public static UnityEvent OnNextButtonPressed = new();
         public static UnityEvent OnWeaponUpgradeButtonPressed = new();
         public static UnityEvent OnPlayerHitObstacle = new();
-        public static UnityEvent OnOpenChestLid = new();
         public static CoinEvent OnCoinCollected = new();
         public static ShotEvent OnGetShotValue = new ();
     }

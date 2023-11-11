@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PistolBulletData
   m_EditorClassIdentifier: 
   index: 3
-  range: 1
-  fireRate: 1
+  range: 12
+  fireRate: 12
   power: 1
-  speed: 1
+  lifeTimeCoef: 12

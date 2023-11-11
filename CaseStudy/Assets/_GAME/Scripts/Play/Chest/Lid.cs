@@ -22,6 +22,7 @@ namespace _GAME.Scripts.Play.Chest
         public void OpenLidAnim()
         {
             _animator.SetBool("isOpen", true);
+            PlayParticle();
         }
 
         private void PlayParticle()

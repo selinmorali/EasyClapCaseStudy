@@ -43,8 +43,8 @@ namespace _GAME.Scripts.UI
                 return;
             }
             
-            Vector3 moneyUIPosition = WorldToUISpace(_canvas, coinPos);
-            coin.transform.position = moneyUIPosition;
+            Vector3 coinUIPosition = WorldToUISpace(_canvas, coinPos);
+            coin.transform.position = coinUIPosition;
             coin.transform.DOMove(coinTargetUI.position, movementDuration)
                 .SetEase(Ease.Linear)
                 .OnComplete(() =>

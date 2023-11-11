@@ -61,6 +61,7 @@ namespace _GAME.Scripts.Controllers
             {
                 weaponDataList[i].range += input;
                 CheckValues(i, 2);
+                weaponDataList[i].CalculateLifeTime();
             }
         }
 

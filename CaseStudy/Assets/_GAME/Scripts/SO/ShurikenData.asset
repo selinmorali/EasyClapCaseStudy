@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShurikenData
   m_EditorClassIdentifier: 
   index: 2
-  range: 1
-  fireRate: 1
+  range: 11
+  fireRate: 11
   power: 1
-  speed: 1
+  lifeTimeCoef: 11

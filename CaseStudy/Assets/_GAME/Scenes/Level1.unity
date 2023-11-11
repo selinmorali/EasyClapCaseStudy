@@ -13583,8 +13583,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b533f255b84b179a48deb716ef53db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 5
-  gateType: 1
+  value: 10
+  gateType: 0
   valueText: {fileID: 363056643}
   typeText: {fileID: 264204028}
   greenMaterial: {fileID: 2100000, guid: 3ed04681f21f53e4ca46eb8d70d927ee, type: 2}
