@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace _GAME.Scripts.UI
 {
-    public class TotalMoneyPanel : MonoBehaviour
+    public class TotalCoinPanel : MonoBehaviour
     {
         public Transform coinTargetUI;
         public float totalCoinValue;
@@ -36,7 +36,7 @@ namespace _GAME.Scripts.UI
             EventManager.OnCoinCollected.RemoveListener(MoveCoinToUI);
         }
      
-        private void MoveCoinToUI(GameObject coin, Vector3 coinPos)
+        public void MoveCoinToUI(GameObject coin, Vector3 coinPos, float income)
         {
             if (coin == null)
             {
@@ -49,7 +49,7 @@ namespace _GAME.Scripts.UI
                 .SetEase(Ease.Linear)
                 .OnComplete(() =>
                 {
-                    totalCoinValue += Mathf.Round(coin.GetComponent<Coin>().coinValue);
+                    totalCoinValue += Mathf.Round(coin.GetComponent<Coin>().coinValue * income);
                     ShakeCoinImage();
                 })
                 .OnKill(() => { coin.SetActive(false); });;
