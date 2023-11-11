@@ -3,7 +3,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
-namespace _GAME.Scripts.Play.Collect
+namespace _GAME.Scripts.Play.Gates
 {
     public enum Type
     {
@@ -15,16 +15,16 @@ namespace _GAME.Scripts.Play.Collect
     public class Gate : MonoBehaviour
     {
         public Type gateType;
-        public TextMeshProUGUI CollectibleValueText;
-        public TextMeshProUGUI CollectibleTypeText;
+        public TextMeshProUGUI collectibleValueText;
+        public TextMeshProUGUI collectibleTypeText;
         public float value;
         
         private Vector3 _originalScale;
 
         private void Awake()
         {
-            CollectibleValueText.text = value.ToString("+#;-#;0");
-            CollectibleTypeText.text = gateType.ToString();
+            collectibleValueText.text = value.ToString("+#;-#;0");
+            collectibleTypeText.text = gateType.ToString();
             _originalScale = transform.localScale;
         }
         
@@ -49,7 +49,7 @@ namespace _GAME.Scripts.Play.Collect
         private void UpdateCollectibleValue(float input)
         {
             value += input;
-            CollectibleValueText.text = value.ToString("+#;-#;0");
+            collectibleValueText.text = value.ToString("+#;-#;0");
         }
         
         private void UpdateScaleTheDoor()

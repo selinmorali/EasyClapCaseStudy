@@ -1,13 +1,13 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
-using Type = _GAME.Scripts.Play.Collect.Type;
+using Type = _GAME.Scripts.Play.Gates.Type;
 
 namespace _GAME.Scripts.Managers
 {
     public class FloatEvent : UnityEvent<float>{}
     public class BoolEvent : UnityEvent<bool>{}
-    public class MoneyEvent : UnityEvent<Vector3, Action, double> { }
+    public class CoinEvent: UnityEvent<GameObject, Vector3>{}
+    public class MoneyEvent : UnityEvent<Vector3, float> { }
     public class ShotEvent : UnityEvent<Type,float>{}
     
     public static class EventManager
@@ -18,8 +18,8 @@ namespace _GAME.Scripts.Managers
         public static UnityEvent OnFinalArea = new();
         public static UnityEvent OnNextButtonPressed = new();
         public static UnityEvent OnWeaponUpgradeButtonPressed = new();
-        //TODO: fiRERATE EVENT firerate arttıkça her bir animasyon için kontrol
-        public static UnityEvent OnClickUpgradeWeaponButton = new();
+        public static UnityEvent OnPlayerHitObstacle = new();
+        public static CoinEvent OnCoinCollected = new();
         public static ShotEvent OnGetShotValue = new ();
     }
 }

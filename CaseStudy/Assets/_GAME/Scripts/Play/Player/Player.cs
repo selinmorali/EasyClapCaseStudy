@@ -43,7 +43,7 @@ namespace _GAME.Scripts.Play.Player
                     createdObject.gameObject.SetActive(true);
                     break;
                 default:
-                    createdObject = objectPooler.SpawnFromPool("kunai", firePoint.transform.position, Quaternion.identity);
+                    createdObject = objectPooler.SpawnFromPool("bullet", firePoint.transform.position, Quaternion.identity);
                     createdObject.gameObject.SetActive(true);
                     break;
             }

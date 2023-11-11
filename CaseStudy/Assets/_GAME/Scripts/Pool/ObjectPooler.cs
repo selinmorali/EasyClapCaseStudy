@@ -47,13 +47,13 @@ namespace _GAME.Scripts.Pool
                 return null;
             }
 
-            for (int i = 0; i < poolDictionary[tag].Count; i++)
+            foreach (var obj in poolDictionary[tag])
             {
-                if (poolDictionary[tag][i].activeInHierarchy == false)
+                if (obj != null && !obj.activeInHierarchy)
                 {
-                    poolDictionary[tag][i].transform.SetPositionAndRotation(position, rotation);
-                    poolDictionary[tag][i].SetActive(true);
-                    return poolDictionary[tag][i];
+                    obj.transform.SetPositionAndRotation(position, rotation);
+                    obj.SetActive(true);
+                    return obj;
                 }
             }
 

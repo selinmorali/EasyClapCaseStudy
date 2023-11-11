@@ -1,4 +1,5 @@
 using _GAME.Scripts.Managers;
+using DG.Tweening;
 using UnityEngine;
 
 namespace _GAME.Scripts.Play.Player
@@ -10,11 +11,13 @@ namespace _GAME.Scripts.Play.Player
         private void OnEnable()
         {
             EventManager.OnFinalArea.AddListener(DecreaseMovementSpeed);
+            EventManager.OnPlayerHitObstacle.AddListener(MoveBackward);
         }
 
         private void OnDisable()
         {
             EventManager.OnFinalArea.RemoveListener(DecreaseMovementSpeed);
+            EventManager.OnPlayerHitObstacle.RemoveListener(MoveBackward);
         }
 
         private void FixedUpdate()
@@ -30,6 +33,11 @@ namespace _GAME.Scripts.Play.Player
         private void ForwardMovement()
         {
             transform.Translate(Vector3.forward * (movementSpeed * Time.fixedDeltaTime));
+        }
+        
+        private void MoveBackward()
+        {
+            transform.DOMoveZ(-0.1f, 1);
         }
 
         private void DecreaseMovementSpeed()

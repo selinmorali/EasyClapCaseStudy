@@ -4,7 +4,7 @@ using _GAME.Scripts.Play.Player;
 using _GAME.Scripts.Play.Shoot;
 using _GAME.Scripts.SO;
 using UnityEngine;
-using Type = _GAME.Scripts.Play.Collect.Type;
+using Type = _GAME.Scripts.Play.Gates.Type;
 
 namespace _GAME.Scripts.Controllers
 {

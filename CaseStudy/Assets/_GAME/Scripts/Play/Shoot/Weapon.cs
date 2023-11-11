@@ -36,6 +36,7 @@ namespace _GAME.Scripts.Play.Shoot
 
         public void UpdateWeaponHitPowerValue(int powerValue)
         {
+            //TODO:Power kapısından geçince weaponın power değeri güncellenmeli
             weaponData.power = powerValue;
         }
 

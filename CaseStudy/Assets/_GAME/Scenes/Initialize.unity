@@ -221,8 +221,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroy: 1
-  index: 0
+  levelIndex: 0
   textIndex: 1
+  currentLevel: {fileID: 0}
 --- !u!4 &1185520388
 Transform:
   m_ObjectHideFlags: 0

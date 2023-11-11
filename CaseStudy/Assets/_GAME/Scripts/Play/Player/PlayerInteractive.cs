@@ -1,5 +1,5 @@
 using _GAME.Scripts.Managers;
-using _GAME.Scripts.Play.Collect;
+using _GAME.Scripts.Play.Gates;
 using UnityEngine;
 
 namespace _GAME.Scripts.Play.Player
@@ -10,6 +10,7 @@ namespace _GAME.Scripts.Play.Player
         {
             EnterEndGameEntry(other);
             EnterGate(other);
+            EnterObstacle(other);
         }
 
         private void EnterEndGameEntry(Collider other)
@@ -35,6 +36,17 @@ namespace _GAME.Scripts.Play.Player
             
             EventManager.OnGetShotValue.Invoke(gate.gateType, gate.value);
             gate.gameObject.SetActive(false);
+        }
+
+        private void EnterObstacle(Collider other)
+        {
+            Obstacle.Obstacle obstacle = other.GetComponent<Obstacle.Obstacle>();
+            if (obstacle == null)
+            {
+                return;
+            }
+            
+            EventManager.OnPlayerHitObstacle.Invoke();
         }
     }
 }
