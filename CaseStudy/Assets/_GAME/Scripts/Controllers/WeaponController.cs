@@ -51,6 +51,7 @@ namespace _GAME.Scripts.Controllers
                 weaponDataList[i].fireRate += input;
                 CheckValues(i, 1);
             }
+            
             animationController.CalculateAnimTime();
         }
 
