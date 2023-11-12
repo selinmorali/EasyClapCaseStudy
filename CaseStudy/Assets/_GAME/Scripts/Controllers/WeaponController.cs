@@ -74,11 +74,6 @@ namespace _GAME.Scripts.Controllers
             }
         }
 
-        public Weapon GetCurrentWeapon()
-        {
-            return weaponPrefabs[currentWeaponIndex];
-        }
-
         private void CheckValues(int input, int typeIndex)
         {
             switch (typeIndex)

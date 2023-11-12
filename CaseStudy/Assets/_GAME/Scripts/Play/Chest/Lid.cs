@@ -49,11 +49,8 @@ namespace _GAME.Scripts.Play.Chest
         {
             yield return new WaitForSeconds(0.8f);
             particleForChestMoveDown.Play();
-            yield return new WaitForSeconds(0.1f);
-            _chest.transform.DOMoveY(-20, 1);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
             _chest.gameObject.SetActive(false);
-           
         }
     }
 }

@@ -1,3 +1,5 @@
+using _GAME.Scripts.Managers;
+using _GAME.Scripts.Managers.LevelSystem;
 using _GAME.Scripts.Play.Shoot;
 using DG.Tweening;
 using TMPro;
@@ -36,9 +38,8 @@ namespace _GAME.Scripts.Play.Chest
                 return;
             }
             
-            weapon.gameObject.SetActive(false);
+            StartCoroutine(weapon.CloseWeaponAndPlayParticle(weapon));
             UpdateHealthValue(weapon.weaponData.power);
-            UpdateScaleChest();
         }
 
         private void UpdateHealthValue( float powerValue)
@@ -51,13 +52,6 @@ namespace _GAME.Scripts.Play.Chest
             chestHealthValue -= powerValue;
             healthValueText.text = chestHealthValue.ToString();
             CheckHealthValue();
-        }
-
-        private void UpdateScaleChest()
-        {
-            transform.DOKill();
-            transform.localScale = _originalScale; 
-            transform.DOPunchScale(Vector3.one * 1.5f, 1, 1);
         }
 
         private void CheckHealthValue()
@@ -78,6 +72,14 @@ namespace _GAME.Scripts.Play.Chest
         private void OpenChestLid() //animation event
         {
             lid.ChestOpeningStatus();
+        }
+
+        public void CheckChestHealth()
+        {
+            if (chestHealthValue > 0)
+            {
+                EventManager.OnLevelSuccess.Invoke();
+            }
         }
     }
 }

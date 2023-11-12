@@ -38,7 +38,7 @@ namespace _GAME.Scripts.Play.Player
         
         private void MoveBackward()
         {
-            transform.DOMoveZ(-0.1f, 1);
+            transform.DOMoveZ(transform.position.z - 5f, 0.8f);
         }
 
         private void DecreaseMovementSpeed()

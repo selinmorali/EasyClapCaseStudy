@@ -11,6 +11,7 @@ namespace _GAME.Scripts.Play.Player
             EnterEndGameEntry(other);
             EnterGate(other);
             EnterObstacle(other);
+            EnterChest(other);
         }
 
         private void EnterEndGameEntry(Collider other)
@@ -47,6 +48,18 @@ namespace _GAME.Scripts.Play.Player
             }
             
             EventManager.OnPlayerHitObstacle.Invoke();
+        }
+
+        private void EnterChest(Collider other)
+        {
+            Chest.Chest chest = other.GetComponent<Chest.Chest>();
+
+            if (chest == null)
+            {
+                return;
+            }
+            
+            chest.CheckChestHealth();
         }
     }
 }

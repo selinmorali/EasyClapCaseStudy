@@ -151,7 +151,7 @@ Transform:
   m_GameObject: {fileID: 2279355495355815110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.198, y: 0.631, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3009816907279043243}
@@ -14875,7 +14875,6 @@ GameObject:
   - component: {fileID: 2017820205526823636}
   - component: {fileID: 2270794518189662682}
   - component: {fileID: 2781850598877265581}
-  - component: {fileID: 4585750536654429054}
   m_Layer: 0
   m_Name: Level1Chest
   m_TagString: Untagged
@@ -14961,33 +14960,6 @@ MonoBehaviour:
   lid: {fileID: 2852412173956920412}
   chestHealthValue: 1
   income: 2
---- !u!54 &4585750536654429054
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7192527008746874170}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 1
 --- !u!1 &7270590621299556063
 GameObject:
   m_ObjectHideFlags: 0
@@ -19823,8 +19795,8 @@ Transform:
   m_GameObject: {fileID: 7480360915035078183}
   m_LocalRotation: {x: 0.5705388, y: 0.30142784, z: -0.27764225, w: -0.7117173}
   m_LocalPosition: {x: -0.015861483, y: 0.671, z: -0.02379392}
-  m_LocalScale: {x: 0.65921956, y: 0.6592193, z: 0.6592192}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1580189661853281294}
   m_Father: {fileID: 4070937895212792149}

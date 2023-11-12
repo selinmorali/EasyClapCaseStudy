@@ -9,8 +9,10 @@ namespace _GAME.Scripts.Managers
         public GameObject tutorialPanel;
         public GameObject gamePanel;
         public GameObject settingsPanel;
+        public GameObject successPanel;
         public GameObject buttons;
         public TextMeshProUGUI levelIndexText;
+        public ParticleSystem particleForSuccess;
 
         private void OnEnable()
         {
@@ -26,6 +28,8 @@ namespace _GAME.Scripts.Managers
                     CloseButtons();
                 }
             });
+            EventManager.OnLevelSuccess.AddListener(OpenSuccessPanel);
+            EventManager.OnLevelSuccess.AddListener(PlaySuccessParticle);
             EventManager.OnOpenButtons.AddListener(OpenButtons);
         }
 
@@ -43,6 +47,8 @@ namespace _GAME.Scripts.Managers
                     CloseButtons();
                 }
             });
+            EventManager.OnLevelSuccess.RemoveListener(OpenSuccessPanel);
+            EventManager.OnLevelSuccess.RemoveListener(PlaySuccessParticle);
             EventManager.OnOpenButtons.RemoveListener(OpenButtons);
         }
 
@@ -64,6 +70,16 @@ namespace _GAME.Scripts.Managers
         private void OpenButtons()
         {
             buttons.SetActive(true);
+        }
+
+        private void OpenSuccessPanel()
+        {
+            successPanel.SetActive(true);
+        }
+
+        private void PlaySuccessParticle()
+        {
+            particleForSuccess.Play();
         }
 
         private void CloseButtons()

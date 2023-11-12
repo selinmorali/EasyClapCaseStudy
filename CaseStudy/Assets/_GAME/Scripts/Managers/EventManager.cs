@@ -9,7 +9,7 @@ namespace _GAME.Scripts.Managers
     public class CoinEvent: UnityEvent<GameObject, Vector3, float>{}
     public class MoneyEvent : UnityEvent<Vector3, float> { }
     public class ShotEvent : UnityEvent<Type,float>{}
-    
+
     public static class EventManager
     {
         public static UnityEvent OnFirstClick = new();
@@ -19,7 +19,8 @@ namespace _GAME.Scripts.Managers
         public static UnityEvent OnNextButtonPressed = new();
         public static UnityEvent OnWeaponUpgradeButtonPressed = new();
         public static UnityEvent OnPlayerHitObstacle = new();
-        public static CoinEvent OnCoinCollected = new();
+        public static UnityEvent OnCheckChestHealthValue= new();
+        public static UnityEvent OnLevelSuccess = new();
         public static ShotEvent OnGetShotValue = new ();
     }
 }

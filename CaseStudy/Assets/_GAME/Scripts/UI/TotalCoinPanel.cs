@@ -1,4 +1,3 @@
-using _GAME.Scripts.Managers;
 using _GAME.Scripts.Play.Collect;
 using DG.Tweening;
 using TMPro;
@@ -26,16 +25,6 @@ namespace _GAME.Scripts.UI
             _canvas = GetComponentInParent<Canvas>();
         }
 
-        private void OnEnable()
-        {
-            EventManager.OnCoinCollected.AddListener(MoveCoinToUI);
-        }
-
-        private void OnDisable()
-        {
-            EventManager.OnCoinCollected.RemoveListener(MoveCoinToUI);
-        }
-     
         public void MoveCoinToUI(GameObject coin, Vector3 coinPos, float income)
         {
             if (coin == null)

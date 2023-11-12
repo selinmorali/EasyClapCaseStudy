@@ -1,3 +1,4 @@
+using _GAME.Scripts.Managers;
 using _GAME.Scripts.Play.Shoot;
 using DG.Tweening;
 using TMPro;
@@ -50,9 +51,9 @@ namespace _GAME.Scripts.Play.Gates
             }
             
             UpdateCollectibleValue(weapon.weaponData.power);
-            UpdateScaleTheDoor();
+            UpdateScaleGate();
             UpdateFillMaterialColor();
-            weapon.gameObject.SetActive(false);
+            StartCoroutine(weapon.CloseWeaponAndPlayParticle(weapon));
         }
 
         private void UpdateCollectibleValue(float input)
@@ -66,7 +67,7 @@ namespace _GAME.Scripts.Play.Gates
             }
         }
         
-        private void UpdateScaleTheDoor()
+        private void UpdateScaleGate()
         {
             transform.DOKill();
             transform.localScale = _originalScale; 

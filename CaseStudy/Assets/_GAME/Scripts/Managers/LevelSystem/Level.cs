@@ -38,6 +38,9 @@ namespace _GAME.Scripts.Managers.LevelSystem
                 state = State.Started;
                 stage = Stage.Runner;
             });
+            
+            EventManager.OnFinalArea.AddListener(FinalStage);
+            EventManager.OnLevelSuccess.AddListener(SuccessState);
         }
 
         private void OnDisable()
@@ -47,6 +50,18 @@ namespace _GAME.Scripts.Managers.LevelSystem
                 state = State.Started;
                 stage = Stage.Runner;
             });
+            EventManager.OnFinalArea.RemoveListener(FinalStage);
+            EventManager.OnLevelSuccess.RemoveListener(SuccessState);
+        }
+
+        private void SuccessState()
+        {
+            state = State.Succeed;
+        }
+
+        private void FinalStage()
+        {
+            stage = Stage.Final;
         }
     }
 }

@@ -39,7 +39,7 @@ namespace _GAME.Scripts.Play.Player
                     createdObject.gameObject.SetActive(true);
                     break;
                 case 2:
-                    createdObject = objectPooler.SpawnFromPool("bullet", firePoint.transform.position, Quaternion.identity);
+                    createdObject = objectPooler.SpawnFromPool("bullet", firePoint.transform.position, Quaternion.Euler(90,0,0));
                     createdObject.gameObject.SetActive(true);
                     break;
                 default:

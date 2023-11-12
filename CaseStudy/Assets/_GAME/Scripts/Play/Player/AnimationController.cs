@@ -36,7 +36,7 @@ namespace _GAME.Scripts.Play.Player
             {
                 CheckAnimationState();
             }
-            else
+            else if(LevelManager.Instance.currentLevel.state == Level.State.Loading || LevelManager.Instance.currentLevel.state == Level.State.Succeed || LevelManager.Instance.currentLevel.state == Level.State.Failed)
             {
                 IdleState();
             }
@@ -112,6 +112,10 @@ namespace _GAME.Scripts.Play.Player
 
         public void Shoot() //Call animation event
         {
+            if (LevelManager.Instance.currentLevel.state == Level.State.Succeed)
+            {
+                return;
+            }
             _player.Shot();
         }
     }
