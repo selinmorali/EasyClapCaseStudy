@@ -33,27 +33,23 @@ namespace _GAME.Scripts.Managers.LevelSystem
 
         private void OnEnable()
         {
-            EventManager.OnFirstClick.AddListener(() =>
-            {
-                state = State.Started;
-                stage = Stage.Runner;
-            });
-            
             EventManager.OnFinalArea.AddListener(FinalStage);
             EventManager.OnLevelSuccess.AddListener(SuccessState);
         }
 
         private void OnDisable()
         {
-            EventManager.OnFirstClick.RemoveListener(() =>
-            {
-                state = State.Started;
-                stage = Stage.Runner;
-            });
             EventManager.OnFinalArea.RemoveListener(FinalStage);
             EventManager.OnLevelSuccess.RemoveListener(SuccessState);
         }
 
+        public void StartedState()
+        {
+            EventManager.OnFirstClick.Invoke();
+            state = State.Started;
+            stage = Stage.Runner;
+        }
+        
         private void SuccessState()
         {
             state = State.Succeed;

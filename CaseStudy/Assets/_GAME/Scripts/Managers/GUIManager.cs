@@ -16,18 +16,12 @@ namespace _GAME.Scripts.Managers
 
         private void OnEnable()
         {
-            EventManager.OnLoadedFirstLevel.AddListener(OpenTutorialPanel);
             EventManager.OnFirstClick.AddListener(() =>
             {
-                if (LevelManager.Instance.levelIndex == 1)
-                {
-                    CloseTutorialPanel();
-                }
-                else
-                {
-                    CloseButtons();
-                }
+                CloseTutorialPanel();
+                CloseButtons();
             });
+
             EventManager.OnLevelSuccess.AddListener(OpenSuccessPanel);
             EventManager.OnLevelSuccess.AddListener(PlaySuccessParticle);
             EventManager.OnOpenButtons.AddListener(OpenButtons);
@@ -35,18 +29,12 @@ namespace _GAME.Scripts.Managers
 
         private void OnDisable()
         {
-            EventManager.OnLoadedFirstLevel.RemoveListener(OpenTutorialPanel);
             EventManager.OnFirstClick.RemoveListener(() =>
             {
-                if (LevelManager.Instance.levelIndex == 1)
-                {
-                    CloseTutorialPanel();
-                }
-                else
-                {
-                    CloseButtons();
-                }
+                CloseTutorialPanel();
+                CloseButtons();
             });
+   
             EventManager.OnLevelSuccess.RemoveListener(OpenSuccessPanel);
             EventManager.OnLevelSuccess.RemoveListener(PlaySuccessParticle);
             EventManager.OnOpenButtons.RemoveListener(OpenButtons);
@@ -65,6 +53,11 @@ namespace _GAME.Scripts.Managers
         private void CloseTutorialPanel()
         {
             tutorialPanel.SetActive(false);
+        }
+
+        public void ClickNextButton()
+        {
+            EventManager.OnNextButtonPressed.Invoke();
         }
 
         private void OpenButtons()

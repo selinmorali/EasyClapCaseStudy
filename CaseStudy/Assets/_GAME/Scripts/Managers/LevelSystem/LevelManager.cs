@@ -64,11 +64,6 @@ namespace _GAME.Scripts.Managers.LevelSystem
             SceneManager.LoadScene(levelIndex);
         }
 
-        private void Reload()
-        {
-            SceneManager.LoadScene(levelIndex);
-        }
-        
         private void LoadStarting()
         {
             Get();
@@ -86,23 +81,10 @@ namespace _GAME.Scripts.Managers.LevelSystem
             textIndex += 1;
         }
 
-        private void LevelIndexCheck()
-        {
-            if (levelIndex == 1)
-            {
-                EventManager.OnLoadedFirstLevel.Invoke();
-            }
-            else
-            {
-                EventManager.OnOpenButtons.Invoke();
-            }
-        }
-
         private IEnumerator Loading()
         {
             LoadStarting();
-            yield return new WaitForSeconds(0.2f);
-            LevelIndexCheck();
+            yield return new WaitForSeconds(0.05f);
         }
         
         private void AssignCurrentLevel(Scene scene, LoadSceneMode mode)

@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroy: 1
   levelIndex: 0
-  textIndex: 1
+  textIndex: 0
   currentLevel: {fileID: 0}
 --- !u!4 &1185520388
 Transform:

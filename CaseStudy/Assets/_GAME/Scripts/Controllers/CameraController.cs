@@ -1,6 +1,4 @@
-using System.Collections;
 using _GAME.Scripts.Managers;
-using Cinemachine;
 using UnityEngine;
 
 namespace _GAME.Scripts.Controllers
@@ -9,7 +7,6 @@ namespace _GAME.Scripts.Controllers
     {
         public GameObject runningCamera;
         public GameObject finalCamera;
-        public Transform player;
 
         private void OnEnable()
         {
