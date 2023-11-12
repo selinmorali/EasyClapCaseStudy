@@ -92,15 +92,13 @@ namespace _GAME.Scripts.Controllers
             switch (typeIndex)
             {
                 case 1: 
-                    weaponDataList[input].fireRate = Mathf.Clamp(weaponDataList[input].fireRate, 1f, 80f);
+                    weaponDataList[input].fireRate = Mathf.Clamp(weaponDataList[input].fireRate, 10f, 70f);
                     break;
                 case 2:
-                    weaponDataList[input].range = Mathf.Clamp(weaponDataList[input].range, 1f, 100f);
+                    weaponDataList[input].range = Mathf.Clamp(weaponDataList[input].range, 10f, 100f);
                     break;
                 case 3:
                     weaponDataList[input].power = Mathf.Clamp(weaponDataList[input].power, 1f, 1000f);
-                    break;
-                default:
                     break;
             }
         }
