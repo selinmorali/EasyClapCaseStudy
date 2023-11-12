@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using _GAME.Scripts.Managers.LevelSystem;
 using TMPro;
 using UnityEngine;
@@ -14,12 +16,25 @@ namespace _GAME.Scripts.Managers
         public TextMeshProUGUI levelIndexText;
         public ParticleSystem particleForSuccess;
 
+        private Animator _buttonAnimator;
+
+        private void Awake()
+        {
+            _buttonAnimator = buttons.GetComponent<Animator>();
+        }
+
         private void OnEnable()
         {
             EventManager.OnFirstClick.AddListener(() =>
             {
-                CloseTutorialPanel();
-                CloseButtons();
+                if (LevelManager.Instance.levelIndex > 1)
+                {
+                    StartCoroutine(CloseButtonsStates());
+                }
+                else
+                {
+                    CloseTutorialPanel();
+                }
             });
 
             EventManager.OnLevelSuccess.AddListener(OpenSuccessPanel);
@@ -31,8 +46,14 @@ namespace _GAME.Scripts.Managers
         {
             EventManager.OnFirstClick.RemoveListener(() =>
             {
-                CloseTutorialPanel();
-                CloseButtons();
+                if (LevelManager.Instance.levelIndex > 1)
+                {
+                    StartCoroutine(CloseButtonsStates());
+                }
+                else
+                {
+                    CloseTutorialPanel();
+                }
             });
    
             EventManager.OnLevelSuccess.RemoveListener(OpenSuccessPanel);
@@ -73,6 +94,18 @@ namespace _GAME.Scripts.Managers
         private void PlaySuccessParticle()
         {
             particleForSuccess.Play();
+        }
+
+        private IEnumerator CloseButtonsStates()
+        {
+           PlayButtonAnim();
+            yield return new WaitForSeconds(1);
+            CloseButtons();
+        }
+
+        private void PlayButtonAnim()
+        {
+            _buttonAnimator.SetBool("isMove", true);
         }
 
         private void CloseButtons()
