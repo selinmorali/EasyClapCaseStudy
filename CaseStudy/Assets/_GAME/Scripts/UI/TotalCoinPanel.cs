@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace _GAME.Scripts.UI
 {
-    public class TotalCoinPanel : MonoBehaviour
+    public class TotalCoinPanel : MonoSingleton<TotalCoinPanel>
     {
         public Transform coinTargetUI;
         public int totalCoinValue;
@@ -25,7 +25,7 @@ namespace _GAME.Scripts.UI
             _coinText = GetComponentInChildren<TextMeshProUGUI>();
             _canvas = GetComponentInParent<Canvas>();
             totalCoinValue = LevelManager.Instance.GetTotalCoinValue();
-            _coinText.text = totalCoinValue.ToString();
+            _coinText.text = "$" + totalCoinValue;
         }
 
         private void OnEnable()
@@ -52,7 +52,7 @@ namespace _GAME.Scripts.UI
                 .OnComplete(() =>
                 {
                     totalCoinValue += coin.GetComponent<Coin>().coinValue * income;
-                    LevelManager.Instance.AddToTotalCoin(totalCoinValue);
+                    LevelManager.Instance.SetTotalCoin(totalCoinValue);
                     ShakeCoinImage();
                 })
                 .OnKill(() => { coin.SetActive(false); });;
@@ -86,7 +86,7 @@ namespace _GAME.Scripts.UI
             _scaleTween = coinTargetUI.transform.DOPunchScale(Vector3.one * 0.5f, 0.5f, 1).SetEase(Ease.Linear);
 
             totalCoinValue += value;
-            LevelManager.Instance.AddToTotalCoin(totalCoinValue);
+            LevelManager.Instance.SetTotalCoin(totalCoinValue);
             UpdateUI();
         }
 

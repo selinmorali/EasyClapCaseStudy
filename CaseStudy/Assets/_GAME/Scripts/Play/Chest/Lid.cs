@@ -9,7 +9,6 @@ namespace _GAME.Scripts.Play.Chest
     public class Lid : MonoBehaviour
     {
         public ObjectPooler pool;
-        public TotalCoinPanel totalCoinPanel;
         public ParticleSystem particleForChestOpen;
         public ParticleSystem particleForChestMoveDown;
         private Chest _chest;
@@ -42,7 +41,7 @@ namespace _GAME.Scripts.Play.Chest
         public void CoinCollect() //animation event
         { 
             _createdCoinObject = pool.SpawnFromPool("coin", transform.position, Quaternion.identity);
-            totalCoinPanel.MoveCoinToUI(_createdCoinObject, transform.position, _chest.income);
+            TotalCoinPanel.Instance.MoveCoinToUI(_createdCoinObject, transform.position, _chest.income);
         }
 
         private IEnumerator ChestMoveDown()

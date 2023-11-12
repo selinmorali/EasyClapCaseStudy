@@ -15,5 +15,5 @@ MonoBehaviour:
   index: 2
   range: 11
   fireRate: 11
-  power: 1
+  power: 11
   lifeTimeCoef: 11

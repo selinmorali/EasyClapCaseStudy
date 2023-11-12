@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using _GAME.Scripts.Managers;
+using _GAME.Scripts.Managers.LevelSystem;
 using _GAME.Scripts.Play.Player;
 using _GAME.Scripts.Play.Shoot;
 using _GAME.Scripts.SO;
@@ -15,14 +16,23 @@ namespace _GAME.Scripts.Controllers
         public int currentWeaponIndex;
         public AnimationController animationController;
 
+        public void Start()
+        {
+            LevelManager.Instance.GetFireRates();
+            LevelManager.Instance.GetRanges();
+            LevelManager.Instance.GetPowers();
+        }
+
         private void OnEnable()
         {
             EventManager.OnGetShotValue.AddListener(SetShotValue);
+            EventManager.OnUpdateFireRate.AddListener(SetFireRate);
         }
 
         private void OnDisable()
         {
             EventManager.OnGetShotValue.RemoveListener(SetShotValue);
+            EventManager.OnUpdateFireRate.RemoveListener(SetFireRate);
         }
 
         private void SetShotValue(Type type, float value)
@@ -53,6 +63,7 @@ namespace _GAME.Scripts.Controllers
             }
             
             animationController.CalculateAnimTime();
+            LevelManager.Instance.SetFireRates();
         }
 
         private void SetRange(float input)
@@ -63,6 +74,7 @@ namespace _GAME.Scripts.Controllers
                 CheckValues(i, 2);
                 weaponDataList[i].CalculateLifeTime();
             }
+            LevelManager.Instance.SetRanges();
         }
 
         private void SetPower(float input)
@@ -72,6 +84,7 @@ namespace _GAME.Scripts.Controllers
                 weaponDataList[i].power += input;
                 CheckValues(i, 3);
             }
+            LevelManager.Instance.SetPowers();
         }
 
         private void CheckValues(int input, int typeIndex)
@@ -79,7 +92,7 @@ namespace _GAME.Scripts.Controllers
             switch (typeIndex)
             {
                 case 1: 
-                    weaponDataList[input].fireRate = Mathf.Clamp(weaponDataList[input].fireRate, 1f, 100f);
+                    weaponDataList[input].fireRate = Mathf.Clamp(weaponDataList[input].fireRate, 1f, 80f);
                     break;
                 case 2:
                     weaponDataList[input].range = Mathf.Clamp(weaponDataList[input].range, 1f, 100f);

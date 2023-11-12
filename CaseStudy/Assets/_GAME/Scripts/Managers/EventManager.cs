@@ -4,6 +4,7 @@ using Type = _GAME.Scripts.Play.Gates.Type;
 namespace _GAME.Scripts.Managers
 {
     public class IntEvent : UnityEvent<int>{}
+    public class FloatEvent : UnityEvent<float>{}
     public class ShotEvent : UnityEvent<Type,float>{}
 
     public static class EventManager
@@ -17,5 +18,7 @@ namespace _GAME.Scripts.Managers
         public static ShotEvent OnGetShotValue = new ();
         public static IntEvent OnTotalCoinUpdate = new();
         public static UnityEvent OnWeaponUpgraded = new();
+        public static FloatEvent OnUpdateFireRate = new();
+        public static FloatEvent OnUpdateRange = new();
     }
 }

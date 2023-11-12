@@ -103,7 +103,7 @@ namespace _GAME.Scripts.Play.Player
             _animationLength = weaponController.weaponDataList[1].fireRate / _fireRateCoef;
             _animator.SetFloat("shurikenSpeed", _animationLength);
 
-            if (pistolAnimator.gameObject.activeInHierarchy == true)
+            if (pistolAnimator.gameObject.activeInHierarchy)
             {
                 _animationLength = weaponController.weaponDataList[2].fireRate / _fireRateCoef;
                 pistolAnimator.SetFloat("pistolSpeed", _animationLength);

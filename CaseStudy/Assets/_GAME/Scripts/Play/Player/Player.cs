@@ -1,5 +1,6 @@
 using _GAME.Scripts.Controllers;
 using _GAME.Scripts.Managers;
+using _GAME.Scripts.Managers.LevelSystem;
 using _GAME.Scripts.Pool;
 using UnityEngine;
 
@@ -15,6 +16,11 @@ namespace _GAME.Scripts.Play.Player
         private GameObject createdObject;
         private float _timer;
         private float _cooldown;
+        
+        public void Awake()
+        {
+            LevelManager.Instance.GetWeaponCurrentIndex();
+        }
 
         private void OnEnable()
         {
@@ -39,11 +45,11 @@ namespace _GAME.Scripts.Play.Player
                     createdObject.gameObject.SetActive(true);
                     break;
                 case 2:
-                    createdObject = objectPooler.SpawnFromPool("bullet", firePoint.transform.position, Quaternion.Euler(90,0,0));
+                    createdObject = objectPooler.SpawnFromPool("bullet", barrelOfPistol.transform.position, Quaternion.Euler(90,0,0));
                     createdObject.gameObject.SetActive(true);
                     break;
                 default:
-                    createdObject = objectPooler.SpawnFromPool("bullet", firePoint.transform.position, Quaternion.identity);
+                    createdObject = objectPooler.SpawnFromPool("bullet", barrelOfPistol.transform.position, Quaternion.identity);
                     createdObject.gameObject.SetActive(true);
                     break;
             }
@@ -51,12 +57,15 @@ namespace _GAME.Scripts.Play.Player
         
         private void UpgradeWeapon()
         {
-            WeaponController.Instance.currentWeaponIndex += 1;
-
-            if (WeaponController.Instance.currentWeaponIndex >= 2)
+            if (WeaponController.Instance.currentWeaponIndex < 2)
             {
-                EquipPistol();
+                WeaponController.Instance.currentWeaponIndex += 1;
+                if (WeaponController.Instance.currentWeaponIndex == 2)
+                {
+                    EquipPistol();
+                }
             }
+            LevelManager.Instance.SetCurrentWeaponIndex(WeaponController.Instance.currentWeaponIndex);
         }
         
         private void EquipPistol()

@@ -120,7 +120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 0}
-  totalCoinPanel: {fileID: 0}
   particleForChestOpen: {fileID: 6046047859239922434}
   particleForChestMoveDown: {fileID: 9128626365110742247}
 --- !u!1 &2279355495355815110
@@ -14900,7 +14899,7 @@ Transform:
   - {fileID: 8095342126440967491}
   - {fileID: 5390984351254313268}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &2017820205526823636
 BoxCollider:

@@ -14814,8 +14814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59faac5d9e824beda4e7b046dcf00fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 0}
-  totalCoinPanel: {fileID: 0}
+  pool: {fileID: 1903610355827521340, guid: 267a06053299140dbaef5cc3a42e4721, type: 3}
   particleForChestOpen: {fileID: 807819143906150041}
   particleForChestMoveDown: {fileID: 9164367999508252521}
 --- !u!1 &4157750681583877978
