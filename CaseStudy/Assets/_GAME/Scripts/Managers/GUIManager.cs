@@ -27,7 +27,6 @@ namespace _GAME.Scripts.Managers
                 }
             });
             EventManager.OnOpenButtons.AddListener(OpenButtons);
-            
         }
 
         private void OnDisable()

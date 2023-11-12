@@ -1,4 +1,4 @@
-using _GAME.Scripts.Managers;
+using _GAME.Scripts.Managers.LevelSystem;
 using _GAME.Scripts.SO;
 using UnityEngine;
 
@@ -11,7 +11,7 @@ namespace _GAME.Scripts.Play.Shoot
 
         private void Update()
         {
-            if (!GameManager.Instance.isFirstClick)
+            if (LevelManager.Instance.currentLevel.state != Level.State.Started)
             {
                 return;
             }

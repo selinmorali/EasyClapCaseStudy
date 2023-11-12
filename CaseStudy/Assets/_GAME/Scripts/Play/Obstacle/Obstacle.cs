@@ -1,4 +1,3 @@
-using _GAME.Scripts.Managers;
 using _GAME.Scripts.Play.Shoot;
 using _GAME.Scripts.Pool;
 using _GAME.Scripts.UI;
@@ -9,6 +8,7 @@ namespace _GAME.Scripts.Play.Obstacle
     public class Obstacle : MonoBehaviour
     {
         public ObjectPooler pool;
+        public TotalCoinPanel coinPanel;
         public float income;
         private GameObject _createdCoinObject;
 
@@ -28,7 +28,7 @@ namespace _GAME.Scripts.Play.Obstacle
             
             weapon.gameObject.SetActive(false);
             _createdCoinObject = pool.SpawnFromPool("coin", transform.position, Quaternion.identity);
-            EventManager.OnCoinCollected.Invoke(_createdCoinObject, transform.position, income);
+            coinPanel.MoveCoinToUI(_createdCoinObject, transform.position, income);
         }
     }
 }

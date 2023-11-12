@@ -5045,7 +5045,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroy: 0
-  isFirstClick: 0
 --- !u!1 &1032415551
 GameObject:
   m_ObjectHideFlags: 0
@@ -5297,7 +5296,7 @@ GameObject:
   - component: {fileID: 1085003754}
   - component: {fileID: 1085003757}
   m_Layer: 5
-  m_Name: TotalMoneyPanel
+  m_Name: TotalCoinPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7225,7 +7224,7 @@ Transform:
   m_GameObject: {fileID: 1396128614}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -276}
-  m_LocalScale: {x: 0.9230769, y: 0.9230769, z: 0.9230769}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1887260582}
@@ -11602,6 +11601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 968196800}
+  coinPanel: {fileID: 1085003757}
   income: 3
 --- !u!1 &919132149142630584
 GameObject:
@@ -14121,6 +14121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 968196800}
+  coinPanel: {fileID: 1085003757}
   income: 2
 --- !u!1 &7041628271560033541
 GameObject:
