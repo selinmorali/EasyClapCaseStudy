@@ -114,6 +114,7 @@ namespace _GAME.Scripts.Play.Player
         {
             if (LevelManager.Instance.currentLevel.state == Level.State.Succeed)
             {
+                IdleState();
                 return;
             }
             _player.Shot();

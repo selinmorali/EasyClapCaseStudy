@@ -17,9 +17,9 @@ namespace _GAME.Scripts.Play.Player
         private float _timer;
         private float _cooldown;
         
-        public void Awake()
+        public void Start()
         {
-            LevelManager.Instance.GetWeaponCurrentIndex();
+            WeaponController.Instance.currentWeaponIndex = LevelManager.Instance.GetWeaponCurrentIndex();
         }
 
         private void OnEnable()

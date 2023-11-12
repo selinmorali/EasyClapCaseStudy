@@ -1070,7 +1070,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127887064}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.07, y: 0.57, z: 46.52}
+  m_LocalPosition: {x: -1.07, y: 0.57, z: 46.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2126,7 +2126,6 @@ MonoBehaviour:
   buttonLevelIndex: 0
   cost: 100
   costMultiplier: 2
-  divider: 10
 --- !u!1 &239231397
 GameObject:
   m_ObjectHideFlags: 0
@@ -20739,7 +20738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3826663647591141786, guid: e42d561995ad3457eb34f53b7a2b1c78, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 46.484
+      value: 46.614002
       objectReference: {fileID: 0}
     - target: {fileID: 3826663647591141786, guid: e42d561995ad3457eb34f53b7a2b1c78, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21638,7 +21637,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172601314}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.16, y: 0.57, z: 32.41}
+  m_LocalPosition: {x: -1.16, y: 0.57, z: 34.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -26994,7 +26993,6 @@ MonoBehaviour:
   buttonLevelIndex: 0
   cost: 80
   costMultiplier: 2
-  divider: 5
 --- !u!1 &1963476026
 GameObject:
   m_ObjectHideFlags: 0
@@ -28905,7 +28903,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5416428505508615615}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2, y: 0.57, z: 32.41}
+  m_LocalPosition: {x: 1.2, y: 0.57, z: 34.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -29431,14 +29429,6 @@ PrefabInstance:
       propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1700777669}
-    - target: {fileID: 6950588876980754851, guid: 1ee772a6146074bf7a6d5865485ed987, type: 3}
-      propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartedState
-      objectReference: {fileID: 0}
-    - target: {fileID: 6950588876980754851, guid: 1ee772a6146074bf7a6d5865485ed987, type: 3}
-      propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: _GAME.Scripts.Managers.LevelSystem.Level, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 7741040059089065812, guid: 1ee772a6146074bf7a6d5865485ed987, type: 3}
       propertyPath: m_Name
       value: Player
