@@ -77,7 +77,7 @@ namespace _GAME.Scripts.Play.Chest
         
         private void OpenChestLid() //animation event
         {
-            lid.OpenLidAnim();
+            lid.ChestOpeningStatus();
         }
     }
 }

@@ -1,5 +1,7 @@
+using System.Collections;
 using _GAME.Scripts.Pool;
 using _GAME.Scripts.UI;
+using DG.Tweening;
 using UnityEngine;
 
 namespace _GAME.Scripts.Play.Chest
@@ -8,7 +10,8 @@ namespace _GAME.Scripts.Play.Chest
     {
         public ObjectPooler pool;
         public TotalCoinPanel totalCoinPanel;
-        public ParticleSystem particleForChest;
+        public ParticleSystem particleForChestOpen;
+        public ParticleSystem particleForChestMoveDown;
         private Chest _chest;
         private Animator _animator;
         private GameObject _createdCoinObject;
@@ -19,21 +22,38 @@ namespace _GAME.Scripts.Play.Chest
             _chest = GetComponentInParent<Chest>();
         }
 
-        public void OpenLidAnim()
+        private void OpenLidAnim()
         {
             _animator.SetBool("isOpen", true);
-            PlayParticle();
         }
 
         private void PlayParticle()
         {
-            particleForChest.Play();
+            particleForChestOpen.Play();
+        }
+
+        public void ChestOpeningStatus()
+        {
+            OpenLidAnim();
+            PlayParticle();
+            StartCoroutine(ChestMoveDown());
         }
 
         public void CoinCollect() //animation event
         { 
             _createdCoinObject = pool.SpawnFromPool("coin", transform.position, Quaternion.identity);
             totalCoinPanel.MoveCoinToUI(_createdCoinObject, transform.position, _chest.income);
+        }
+
+        private IEnumerator ChestMoveDown()
+        {
+            yield return new WaitForSeconds(0.8f);
+            particleForChestMoveDown.Play();
+            yield return new WaitForSeconds(0.5f);
+            _chest.transform.DOMoveY(-20, 1);
+            yield return new WaitForSeconds(0.5f);
+            _chest.gameObject.SetActive(false);
+           
         }
     }
 }

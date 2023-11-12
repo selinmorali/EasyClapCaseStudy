@@ -28,7 +28,7 @@ namespace _GAME.Scripts.Play.Shoot
                 _timer = 0;
                 gameObject.SetActive(false);
             }
-            transform.Translate(Vector3.forward * (10f * Time.deltaTime));
+            transform.Translate(Vector3.forward * (10f * Time.deltaTime), Space.World);
         }
     }
 }

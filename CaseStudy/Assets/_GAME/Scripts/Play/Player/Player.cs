@@ -31,11 +31,11 @@ namespace _GAME.Scripts.Play.Player
             switch (WeaponController.Instance.currentWeaponIndex)
             {
                 case 0:
-                    createdObject = objectPooler.SpawnFromPool("kunai", firePoint.transform.position, Quaternion.identity);
+                    createdObject = objectPooler.SpawnFromPool("kunai", firePoint.transform.position, Quaternion.Euler(90,0,0));
                     createdObject.gameObject.SetActive(true);
                     break;
                 case 1:
-                    createdObject = objectPooler.SpawnFromPool("shuriken", firePoint.transform.position, Quaternion.identity);
+                    createdObject = objectPooler.SpawnFromPool("shuriken", firePoint.transform.position, Quaternion.Euler(0,0,90));
                     createdObject.gameObject.SetActive(true);
                     break;
                 case 2:

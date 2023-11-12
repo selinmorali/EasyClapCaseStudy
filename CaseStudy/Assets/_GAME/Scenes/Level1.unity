@@ -1665,7 +1665,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.95141417, g: 0.36320752, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.95141417, g: 0.36320752, b: 1, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2377,7 +2377,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395353927}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.75, y: 0.57, z: 14.75}
+  m_LocalPosition: {x: -1.07, y: 0.57, z: 9.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -7224,8 +7224,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396128614}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -399}
-  m_LocalScale: {x: 233.72307, y: 233.72307, z: 233.72307}
+  m_LocalPosition: {x: 0, y: 0, z: -276}
+  m_LocalScale: {x: 0.9230769, y: 0.9230769, z: 0.9230769}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1887260582}
@@ -10885,8 +10885,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 610261451}
   - {fileID: 2002984030}
+  - {fileID: 610261451}
   - {fileID: 1007230435}
   m_Father: {fileID: 638885547}
   m_RootOrder: -1
@@ -11376,7 +11376,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148374641801}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.252, y: 0.491, z: 5.434}
+  m_LocalPosition: {x: -1.12, y: 0.491, z: 26.5}
   m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13504,6 +13504,14 @@ PrefabInstance:
       propertyPath: totalCoinPanel
       value: 
       objectReference: {fileID: 1085003757}
+    - target: {fileID: 2750700027336300567, guid: b3cc3a38dde5e49f88d2b7c0fd484523, type: 3}
+      propertyPath: particleForChestOpen
+      value: 
+      objectReference: {fileID: 5405322490990890502}
+    - target: {fileID: 2750700027336300567, guid: b3cc3a38dde5e49f88d2b7c0fd484523, type: 3}
+      propertyPath: particleForChestMoveDown
+      value: 
+      objectReference: {fileID: 5405322490990890501}
     - target: {fileID: 5990802684716688826, guid: b3cc3a38dde5e49f88d2b7c0fd484523, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -13553,6 +13561,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3cc3a38dde5e49f88d2b7c0fd484523, type: 3}
+--- !u!198 &5405322490990890501 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2648849170161060418, guid: b3cc3a38dde5e49f88d2b7c0fd484523, type: 3}
+  m_PrefabInstance: {fileID: 5405322490990890500}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5405322490990890502 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7305236502180876409, guid: b3cc3a38dde5e49f88d2b7c0fd484523, type: 3}
+  m_PrefabInstance: {fileID: 5405322490990890500}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5416428505508615615
 GameObject:
   m_ObjectHideFlags: 0
@@ -14206,21 +14224,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 32481742695775451, guid: 1ee772a6146074bf7a6d5865485ed987, type: 3}
-      propertyPath: dontDestroy
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 32481742695775451, guid: 1ee772a6146074bf7a6d5865485ed987, type: 3}
       propertyPath: weaponController
       value: 
       objectReference: {fileID: 1346191536}
-    - target: {fileID: 644576573067958958, guid: 1ee772a6146074bf7a6d5865485ed987, type: 3}
-      propertyPath: maxClampX
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 644576573067958958, guid: 1ee772a6146074bf7a6d5865485ed987, type: 3}
-      propertyPath: minClampX
-      value: -2
-      objectReference: {fileID: 0}
     - target: {fileID: 1028666705813803178, guid: 1ee772a6146074bf7a6d5865485ed987, type: 3}
       propertyPath: objectPooler
       value: 
@@ -14269,22 +14275,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4688620467494661023, guid: 1ee772a6146074bf7a6d5865485ed987, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5139980070593762071, guid: 1ee772a6146074bf7a6d5865485ed987, type: 3}
       propertyPath: _camera
       value: 
       objectReference: {fileID: 744859239}
-    - target: {fileID: 6040866252700615064, guid: 1ee772a6146074bf7a6d5865485ed987, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6040866252700615064, guid: 1ee772a6146074bf7a6d5865485ed987, type: 3}
-      propertyPath: m_CullingMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6950588876980754851, guid: 1ee772a6146074bf7a6d5865485ed987, type: 3}
       propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
