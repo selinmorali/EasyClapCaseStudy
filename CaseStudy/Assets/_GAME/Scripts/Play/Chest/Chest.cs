@@ -12,7 +12,7 @@ namespace _GAME.Scripts.Play.Chest
         public TextMeshProUGUI healthValueText;
         public Lid lid;
         public float chestHealthValue;
-        public float income;
+        public int income;
        
         private Vector3 _originalScale;
         private Animator _animator;
@@ -42,7 +42,7 @@ namespace _GAME.Scripts.Play.Chest
             UpdateHealthValue(weapon.weaponData.power);
         }
 
-        private void UpdateHealthValue( float powerValue)
+        private void UpdateHealthValue(float powerValue)
         {
             if (chestHealthValue <= 0)
             {

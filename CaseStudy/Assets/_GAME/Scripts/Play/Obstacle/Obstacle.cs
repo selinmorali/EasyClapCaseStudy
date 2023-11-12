@@ -10,7 +10,7 @@ namespace _GAME.Scripts.Play.Obstacle
     {
         public ObjectPooler pool;
         public TotalCoinPanel coinPanel;
-        public float income;
+        public int income;
         public float scaleCoef;
         
         private GameObject _createdCoinObject;

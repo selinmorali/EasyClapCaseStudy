@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 namespace _GAME.Scripts.Managers.LevelSystem
 {
@@ -95,6 +96,17 @@ namespace _GAME.Scripts.Managers.LevelSystem
                 return;
             }
             currentLevel = levelObject.GetComponent<Level>();
+        }
+        
+        public int GetTotalCoinValue()
+        {
+            return PlayerPrefs.GetInt("TotalCoin");
+        }
+
+        public void AddToTotalCoin(int value)
+        {
+            PlayerPrefs.SetInt("TotalCoin", value);
+            PlayerPrefs.Save();
         }
     }
 }

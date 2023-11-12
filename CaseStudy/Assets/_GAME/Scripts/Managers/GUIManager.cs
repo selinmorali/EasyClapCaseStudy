@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using _GAME.Scripts.Managers.LevelSystem;
 using TMPro;
@@ -111,11 +110,6 @@ namespace _GAME.Scripts.Managers
         private void CloseButtons()
         {
             buttons.SetActive(false);
-        }
-
-        public void ClickUpgradeButton()
-        {
-            EventManager.OnWeaponUpgradeButtonPressed.Invoke();
         }
     }
 }

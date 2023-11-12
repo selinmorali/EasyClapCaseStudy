@@ -1,3 +1,5 @@
+using _GAME.Scripts.Managers;
+using _GAME.Scripts.Managers.LevelSystem;
 using _GAME.Scripts.Play.Collect;
 using DG.Tweening;
 using TMPro;
@@ -8,7 +10,7 @@ namespace _GAME.Scripts.UI
     public class TotalCoinPanel : MonoBehaviour
     {
         public Transform coinTargetUI;
-        public float totalCoinValue;
+        public int totalCoinValue;
         private Canvas _canvas;
         private TextMeshProUGUI _coinText;
         private Tween _scaleTween;
@@ -21,11 +23,22 @@ namespace _GAME.Scripts.UI
         private void Awake()
         {
             _coinText = GetComponentInChildren<TextMeshProUGUI>();
-            _coinText.text = totalCoinValue.ToString();
             _canvas = GetComponentInParent<Canvas>();
+            totalCoinValue = LevelManager.Instance.GetTotalCoinValue();
+            _coinText.text = totalCoinValue.ToString();
         }
 
-        public void MoveCoinToUI(GameObject coin, Vector3 coinPos, float income)
+        private void OnEnable()
+        {
+            EventManager.OnTotalCoinUpdate.AddListener(UpdateTotalCoinValue);
+        }
+
+        private void OnDisable()
+        {
+            EventManager.OnTotalCoinUpdate.RemoveListener(UpdateTotalCoinValue);
+        }
+
+        public void MoveCoinToUI(GameObject coin, Vector3 coinPos, int income)
         {
             if (coin == null)
             {
@@ -38,7 +51,8 @@ namespace _GAME.Scripts.UI
                 .SetEase(Ease.Linear)
                 .OnComplete(() =>
                 {
-                    totalCoinValue += Mathf.Round(coin.GetComponent<Coin>().coinValue * income);
+                    totalCoinValue += coin.GetComponent<Coin>().coinValue * income;
+                    LevelManager.Instance.AddToTotalCoin(totalCoinValue);
                     ShakeCoinImage();
                 })
                 .OnKill(() => { coin.SetActive(false); });;
@@ -64,7 +78,7 @@ namespace _GAME.Scripts.UI
             _scaleTween = coinTargetUI.DOPunchScale(Vector3.one * shakeStregnth, shakeDuration).SetEase(Ease.Linear);
         }
         
-        private void UpdateMoneyValue(float value)
+        private void UpdateTotalCoinValue(int value)
         {
             if (_scaleTween != null)
                 _scaleTween.Kill(true);
@@ -72,8 +86,7 @@ namespace _GAME.Scripts.UI
             _scaleTween = coinTargetUI.transform.DOPunchScale(Vector3.one * 0.5f, 0.5f, 1).SetEase(Ease.Linear);
 
             totalCoinValue += value;
-            totalCoinValue = Mathf.Round(totalCoinValue);
-
+            LevelManager.Instance.AddToTotalCoin(totalCoinValue);
             UpdateUI();
         }
 

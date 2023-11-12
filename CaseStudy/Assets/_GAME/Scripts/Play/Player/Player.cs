@@ -18,12 +18,12 @@ namespace _GAME.Scripts.Play.Player
 
         private void OnEnable()
         {
-            EventManager.OnWeaponUpgradeButtonPressed.AddListener(UpgradeWeapon);
+            EventManager.OnWeaponUpgraded.AddListener(UpgradeWeapon);
         }
 
         private void OnDisable()
         {
-            EventManager.OnWeaponUpgradeButtonPressed.RemoveListener(UpgradeWeapon);
+            EventManager.OnWeaponUpgraded.RemoveListener(UpgradeWeapon);
         }
 
         public void Shot()
@@ -48,7 +48,7 @@ namespace _GAME.Scripts.Play.Player
                     break;
             }
         }
-
+        
         private void UpgradeWeapon()
         {
             WeaponController.Instance.currentWeaponIndex += 1;

@@ -1,4 +1,3 @@
-using _GAME.Scripts.Managers;
 using _GAME.Scripts.Play.Shoot;
 using DG.Tweening;
 using TMPro;
